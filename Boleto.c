@@ -182,7 +182,11 @@ void Wallet_Pop(Wallet* wallet, int index){
   }
 }
 
-
+/**
+ * @brief La función Wallet_Print imprime los detalles de los tickets almacenados en una billetera.
+ * 
+ * @param wallet Un puntero a una estructura de Wallet.
+ */
 void Wallet_Print(Wallet* wallet){
   if(Wallet_Len(wallet) > 0){
     for(size_t i = 0; i < Wallet_Len(wallet); i++){
@@ -197,18 +201,46 @@ void Wallet_Print(Wallet* wallet){
   }
 }
 
+/**
+ * @brief La función comprueba si una billetera está llena comparando su longitud con su capacidad.
+ * 
+ * @param wallet El parámetro vallet es un puntero a una estructura Wallet.
+ * 
+ * @return un valor booleano, ya sea verdadero o falso.
+ */
 bool Wallet_IsFull( Wallet* wallet ){
   return wallet->len==wallet->capacity;
 }
 
+/**
+ * @brief La función Wallet_IsEmpty comprueba si una billetera está vacía o no.
+ * 
+ * @param wallet El parámetro wallet es un puntero a un objeto Wallet.
+ * 
+ * @return un valor booleano que indica si la billetera está vacía o no.
+ */
 bool Wallet_IsEmpty( Wallet* wallet ){
   return wallet->len==0;
 }
 
+/**
+ * @brief La función Wallet_Len devuelve la longitud de un objeto Wallet.
+ * 
+ * @param wallet El parámetro wallet es un puntero a un objeto Wallet.
+ * 
+ * @return la longitud de la billetera.
+ */
 size_t Wallet_Len( Wallet* wallet ){
   return wallet->len;
 }
 
+/**
+ * @brief La función Wallet_Capacity devuelve la capacidad de un objeto Wallet.
+ * 
+ * @param wallet El parámetro wallet es un puntero a un objeto Wallet.
+ * 
+ * @return la capacidad de la billetera.
+ */
 size_t Wallet_Capacity( Wallet* wallet ){
   return wallet->capacity;
 }
